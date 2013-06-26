@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/tableLayout1"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+
+    <!-- 4 columns -->
+
+    <TableRow>
+
+        <EditText
+            android:id="@+id/txtPerson"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="5dip"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/drawable_edittext"
+            android:inputType="text"
+            android:maxLines="1"
+            android:singleLine="true"
+            android:textColor="#FFFFFF" />
+
+        <EditText
+            android:id="@+id/txtDaysStayed"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="5dip"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/drawable_edittext"
+            android:inputType="numberDecimal"
+            android:maxLines="1"
+            android:singleLine="true"
+            android:textColor="#FFFFFF" />
+
+        <EditText
+            android:id="@+id/txtPayment"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="5dip"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/drawable_edittext"
+            android:focusable="false"
+            android:inputType="none"
+            android:maxLines="1"
+            android:singleLine="true"
+            android:textColor="#708090" />
+
+        <ImageButton
+            android:id="@+id/btnDeletePerson"
+            android:layout_width="30dip"
+            android:layout_height="25dip"
+            android:layout_gravity="center"
+            android:layout_marginRight="5dp"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/drawable_rounded_button"
+            android:contentDescription="@string/content_desc_delete_person"
+            android:src="@drawable/ic_btn_round_minus" />
+    </TableRow>
+
+</TableLayout>

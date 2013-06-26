@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/MainLayout"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:layout_gravity="center_vertical"
+    android:orientation="vertical"
+    android:windowSoftInputMode="adjustResize" >
+
+    <ScrollView
+        android:id="@+id/ScrollView"
+        android:layout_width="fill_parent"
+        android:layout_height="300dp"
+        android:layout_gravity="center_horizontal"
+        android:scrollbars="horizontal" >
+
+        <LinearLayout
+            android:id="@+id/layoutLinearOuter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:id="@+id/layoutLinearTotalBill"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:padding="6dip" >
+
+                <TextView
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:text="@string/label_total_pub_bill"
+                    android:textColor="#FFFFFF"
+                    android:textSize="20sp" />
+
+                <EditText
+                    android:id="@+id/txtTotalPubBill"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dip"
+                    android:background="@drawable/drawable_edittext"
+                    android:hint="@string/prompt_total_pub_bill"
+                    android:inputType="numberDecimal"
+                    android:maxLines="1"
+                    android:singleLine="true"
+                    android:textColor="#FFFFFF"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layoutLinearAddPerson"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical" >
+
+                <!--
+                <Button
+                    android:id="@+id/btnAddPerson"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dip"
+                    android:layout_gravity="center"
+                    android:background="@drawable/drawable_button"
+                    android:text="@string/label_add_person" />
+                -->
+
+                <TableLayout
+                    android:id="@+id/tableLayoutMain"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent" >
+
+                    <TableRow>
+
+                        <TextView
+                            android:layout_width="100dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="5dip" />
+
+                        <TextView
+                            android:layout_width="80dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="5dip" />
+
+                        <TextView
+                            android:layout_width="80dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="5dip" />
+
+                        <ImageButton
+                            android:id="@+id/btnAddPerson"
+                            android:layout_width="30dip"
+                            android:layout_height="25dip"
+                            android:layout_gravity="center"
+                            android:layout_marginBottom="10dp"
+                            android:layout_marginRight="5dp"
+                            android:layout_marginTop="10dp"
+                            android:background="@drawable/drawable_rounded_button"
+                            android:contentDescription="@string/content_desc_add_person"
+                            android:src="@drawable/ic_btn_round_plus" />
+                    </TableRow>
+                </TableLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layoutLinearPersonsHeader"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical" >
+
+                <TableLayout
+                    android:id="@+id/tableLayoutMain"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent" >
+
+                    <!-- 4columns -->
+
+                    <TableRow>
+
+                        <TextView
+                            android:layout_width="100dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="5dip"
+                            android:text="@string/label_person_name"
+                            android:textColor="#FFFFFF"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:layout_width="80dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="5dip"
+                            android:text="@string/label_days_stayed"
+                            android:textColor="#FFFFFF"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:layout_width="80dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="5dip"
+                            android:text="@string/label_payment"
+                            android:textColor="#FFFFFF"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:layout_width="40dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="5dip"
+                            android:textColor="#FFFFFF"
+                            android:textSize="14sp" />
+                    </TableRow>
+                </TableLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layoutLinearPersonBills"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_weight="1"
+                android:orientation="vertical" >
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layoutLinearComputeBill"
+                android:layout_width="match_parent"
+                android:layout_height="60dip"
+                android:layout_weight="1" >
+
+                <Button
+                    android:id="@+id/btnComputeBillSplit"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dip"
+                    android:layout_gravity="center"
+                    android:background="@drawable/drawable_button"
+                    android:text="@string/label_compute_bill" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

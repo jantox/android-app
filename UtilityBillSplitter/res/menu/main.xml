@@ -1,0 +1,19 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <item
+        android:id="@+id/file"
+        android:showAsAction="always"
+        android:title="@string/action_menu">
+        <menu>
+            <item
+                android:id="@+id/action_about"
+                android:orderInCategory="100"
+                android:title="@string/action_about"/>
+            <item
+                android:id="@+id/action_change_logs"
+                android:orderInCategory="100"
+                android:title="@string/action_change_logs"/>
+        </menu>
+    </item>
+
+</menu>

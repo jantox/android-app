@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Utility Bill Splitter</string>
+    <string name="app_version">0.2</string>
+    <string name="action_menu">Menu</string>
+    <string name="action_about">About</string>
+    <string name="action_change_logs">Change Logs</string>
+    
+    <string name="label_total_pub_bill">Total Bill:</string>
+    <string name="prompt_total_pub_bill">Input amount</string>
+    
+    <string name="label_person_name">Name</string>
+    <string name="prompt_input_name">Input name</string>
+    
+    <string name="label_days_stayed">Days Stayed</string>
+    <string name="prompt_input_days_stayed">Input days</string>
+    <string name="label_payment">Payment</string>
+    <string name="label_delete_person">Delete</string>
+    <string name="content_desc_delete_person">Delete</string>
+    <string name="label_add_person">Add Person</string>
+    <string name="content_desc_add_person">Add</string>
+    
+    <string name="label_compute_bill">Compute Bill Now</string>
+    
+    <!-- about -->
+	<string name="label_about">Created by jantox[@]gmail.com. \nPlease use at your own risk and always recompute.</string>
+    
+   <!-- change logs -->
+	<string name="label_change_logs">
+	     v02: UI updated to be more presentable. Bug fixes during computation.\n\nv01: Initial release.</string>
+
+</resources>
