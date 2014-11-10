@@ -2,7 +2,7 @@
 <resources>
 
     <string name="app_name">Utility Bill Splitter</string>
-    <string name="app_version">0.2</string>
+    <string name="app_version">1</string>
     <string name="action_menu">Menu</string>
     <string name="action_about">About</string>
     <string name="action_change_logs">Change Logs</string>
@@ -24,10 +24,10 @@
     <string name="label_compute_bill">Compute Bill Now</string>
     
     <!-- about -->
-	<string name="label_about">Created by jantox[@]gmail.com. \nPlease use at your own risk and always recompute.</string>
+	<string name="label_about">Created by kjrebada[@]gmail.com. \nPlease use at your own risk and always recompute.</string>
     
    <!-- change logs -->
 	<string name="label_change_logs">
-	     v02: UI updated to be more presentable. Bug fixes during computation.\n\nv01: Initial release.</string>
+	     v1: Initial release.</string>
 
 </resources>
