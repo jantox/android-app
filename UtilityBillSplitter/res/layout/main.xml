@@ -1,18 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/MainLayout"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
-    android:layout_gravity="center_vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center_horizontal"
     android:orientation="vertical"
     android:windowSoftInputMode="adjustResize" >
 
     <ScrollView
         android:id="@+id/ScrollView"
         android:layout_width="fill_parent"
-        android:layout_height="300dp"
-        android:layout_gravity="center_horizontal"
-        android:scrollbars="horizontal" >
+        android:layout_height="0dp"
+        android:layout_weight="1">
 
         <LinearLayout
             android:id="@+id/layoutLinearOuter"
@@ -50,109 +49,83 @@
                     android:textStyle="bold" />
             </LinearLayout>
 
-            <LinearLayout
-                android:id="@+id/layoutLinearAddPerson"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:orientation="vertical" >
+            <TableRow
+                android:id="@+id/tableRowMain"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent" >
 
-                <!--
-                <Button
+                <TextView
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="5dip"
+                    android:layout_marginRight="5dip" />
+
+                <TextView
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="5dip"
+                    android:layout_marginRight="5dip" />
+
+                <TextView
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="5dip"
+                    android:layout_marginRight="5dip" />
+
+                <ImageButton
                     android:id="@+id/btnAddPerson"
-                    android:layout_width="match_parent"
-                    android:layout_height="40dip"
+                    android:layout_width="30dip"
+                    android:layout_height="25dip"
                     android:layout_gravity="center"
-                    android:background="@drawable/drawable_button"
-                    android:text="@string/label_add_person" />
-                -->
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginEnd="5dip"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/drawable_rounded_button"
+                    android:contentDescription="@string/content_desc_add_person"
+                    android:src="@drawable/ic_btn_round_plus" />
+            </TableRow>
 
-                <TableLayout
-                    android:id="@+id/tableLayoutMain"
-                    android:layout_width="fill_parent"
-                    android:layout_height="fill_parent" >
+            <TableRow
+                android:id="@+id/tableLayoutPersonsHeader"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent" >
 
-                    <TableRow>
+                <TextView
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="5dip"
+                    android:layout_marginRight="5dip"
+                    android:text="@string/label_person_name"
+                    android:textColor="#FFFFFF"
+                    android:textSize="14sp" />
 
-                        <TextView
-                            android:layout_width="100dp"
-                            android:layout_height="wrap_content"
-                            android:layout_marginRight="5dip" />
+                <TextView
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="5dip"
+                    android:layout_marginRight="5dip"
+                    android:text="@string/label_days_stayed"
+                    android:textColor="#FFFFFF"
+                    android:textSize="14sp" />
 
-                        <TextView
-                            android:layout_width="80dp"
-                            android:layout_height="wrap_content"
-                            android:layout_marginRight="5dip" />
+                <TextView
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="5dip"
+                    android:layout_marginRight="5dip"
+                    android:text="@string/label_payment"
+                    android:textColor="#FFFFFF"
+                    android:textSize="14sp" />
 
-                        <TextView
-                            android:layout_width="80dp"
-                            android:layout_height="wrap_content"
-                            android:layout_marginRight="5dip" />
-
-                        <ImageButton
-                            android:id="@+id/btnAddPerson"
-                            android:layout_width="30dip"
-                            android:layout_height="25dip"
-                            android:layout_gravity="center"
-                            android:layout_marginBottom="10dp"
-                            android:layout_marginRight="5dp"
-                            android:layout_marginTop="10dp"
-                            android:background="@drawable/drawable_rounded_button"
-                            android:contentDescription="@string/content_desc_add_person"
-                            android:src="@drawable/ic_btn_round_plus" />
-                    </TableRow>
-                </TableLayout>
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/layoutLinearPersonsHeader"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:orientation="vertical" >
-
-                <TableLayout
-                    android:id="@+id/tableLayoutMain"
-                    android:layout_width="fill_parent"
-                    android:layout_height="fill_parent" >
-
-                    <!-- 4columns -->
-
-                    <TableRow>
-
-                        <TextView
-                            android:layout_width="100dp"
-                            android:layout_height="wrap_content"
-                            android:layout_marginRight="5dip"
-                            android:text="@string/label_person_name"
-                            android:textColor="#FFFFFF"
-                            android:textSize="14sp" />
-
-                        <TextView
-                            android:layout_width="80dp"
-                            android:layout_height="wrap_content"
-                            android:layout_marginRight="5dip"
-                            android:text="@string/label_days_stayed"
-                            android:textColor="#FFFFFF"
-                            android:textSize="14sp" />
-
-                        <TextView
-                            android:layout_width="80dp"
-                            android:layout_height="wrap_content"
-                            android:layout_marginRight="5dip"
-                            android:text="@string/label_payment"
-                            android:textColor="#FFFFFF"
-                            android:textSize="14sp" />
-
-                        <TextView
-                            android:layout_width="40dp"
-                            android:layout_height="wrap_content"
-                            android:layout_marginRight="5dip"
-                            android:textColor="#FFFFFF"
-                            android:textSize="14sp" />
-                    </TableRow>
-                </TableLayout>
-            </LinearLayout>
+                <TextView
+                    android:layout_width="40dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="5dip"
+                    android:layout_marginRight="5dip"
+                    android:textColor="#FFFFFF"
+                    android:textSize="14sp" />
+            </TableRow>
 
             <LinearLayout
                 android:id="@+id/layoutLinearPersonBills"
@@ -178,5 +151,24 @@
             </LinearLayout>
         </LinearLayout>
     </ScrollView>
+
+    <!-- your bottom content -->
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:orientation="vertical">
+
+        <com.google.android.gms.ads.AdView
+            xmlns:ads="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/adView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            ads:adSize="BANNER"
+            ads:adUnitId="@string/banner_ad_unit_id" >
+        </com.google.android.gms.ads.AdView>
+    </LinearLayout>
 
 </LinearLayout>

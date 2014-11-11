@@ -25,6 +25,8 @@ import android.widget.Toast;
 
 import com.android.utility.bill.splitter.util.NumberUtil;
 import com.android.utility.bill.splitter.view.BoxView;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
 
 /**
  * This class is the main UI for the application.
@@ -45,6 +47,10 @@ public class MainActivity extends Activity implements Observer {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.main);
+
+		AdRequest adRequest = new AdRequest.Builder().build();
+		AdView adView = (AdView) this.findViewById(R.id.adView);
+		adView.loadAd(adRequest);
 
 		setTitle(getAppVersionName());
 
@@ -94,11 +100,17 @@ public class MainActivity extends Activity implements Observer {
 			public void onClick(View v) {
 				if (boxMap.size() != 0) {
 					if (computeBill())
-						Toast.makeText(getApplicationContext(),
-								"Computation done", Toast.LENGTH_SHORT).show();
+						Toast.makeText(
+								getApplicationContext(),
+								getResources().getString(
+										R.string.toast_computation_done),
+								Toast.LENGTH_SHORT).show();
 				} else {
-					Toast.makeText(getApplicationContext(),
-							"Please add a person", Toast.LENGTH_SHORT).show();
+					Toast.makeText(
+							getApplicationContext(),
+							getResources().getString(
+									R.string.error_add_a_person),
+							Toast.LENGTH_SHORT).show();
 				}
 			}
 		});
@@ -232,7 +244,8 @@ public class MainActivity extends Activity implements Observer {
 		boolean cancel = false;
 
 		if (TextUtils.isEmpty(totalBill)) {
-			mTxtTotalBillView.setError("Input total bill");
+			mTxtTotalBillView.setError(getResources().getString(
+					R.string.error_input_total_bill));
 			focusView = mTxtTotalBillView;
 			cancel = true;
 		}
@@ -244,7 +257,9 @@ public class MainActivity extends Activity implements Observer {
 					.toString();
 			if (TextUtils.isEmpty(strDaysSpent)
 					|| Double.parseDouble(strDaysSpent) <= 0) {
-				box.getTxtTotalDaysSpent().setError("Input days spent");
+				box.getTxtTotalDaysSpent().setError(
+						getResources().getString(
+								R.string.error_input_days_spent));
 				focusView = (EditText) box.getTxtTotalDaysSpent();
 				cancel = true;
 			}
@@ -271,10 +286,9 @@ public class MainActivity extends Activity implements Observer {
 				BoxView box = boxMap.get(boxMap.keyAt(i));
 				double daysSpent = Double.parseDouble(box
 						.getTxtTotalDaysSpent().getText().toString());
-				box.getTxtTotalPayment()
-						.setText(
-								String.valueOf(NumberUtil.RoundTo2Decimals(daysSpent
-										* billPerDay)));
+				box.getTxtTotalPayment().setText(
+						String.valueOf(NumberUtil.RoundTo2Decimals(daysSpent
+								* billPerDay)));
 			}
 
 			return true;
@@ -284,7 +298,6 @@ public class MainActivity extends Activity implements Observer {
 		}
 
 	}
-
 
 	@Override
 	public void update(Observable observable, Object data) {
@@ -302,8 +315,7 @@ public class MainActivity extends Activity implements Observer {
 	 * @return
 	 */
 	private String getAppVersionName() {
-		return getResources().getString(R.string.app_name) + " v"
-				+ getResources().getString(R.string.app_version);
+		return getResources().getString(R.string.app_name);
 	}
 
 	@Override
