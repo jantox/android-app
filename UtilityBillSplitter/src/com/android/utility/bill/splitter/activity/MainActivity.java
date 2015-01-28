@@ -168,17 +168,15 @@ public class MainActivity extends Activity implements Observer {
 
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
-		// Handle item selection
-		switch (item.getItemId()) {
-		case R.id.action_about:
+		int itemId = item.getItemId();
+		if (itemId == R.id.action_about) {
 			createAlertDialog(R.id.action_about);
 			return true;
-		case R.id.action_change_logs:
+		} else if (itemId == R.id.action_change_logs) {
 			createAlertDialog(R.id.action_change_logs);
 			return true;
-		default:
+		} else {
 			return super.onOptionsItemSelected(item);
-
 		}
 	}
 
@@ -190,8 +188,7 @@ public class MainActivity extends Activity implements Observer {
 	private void createAlertDialog(int choice) {
 		AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
 
-		switch (choice) {
-		case R.id.action_about:
+		if (choice == R.id.action_about) {
 			// set title
 			alertDialogBuilder.setTitle("About " + getAppVersionName());
 			// set dialog message
@@ -205,8 +202,7 @@ public class MainActivity extends Activity implements Observer {
 									dialog.cancel();
 								}
 							});
-			break;
-		case R.id.action_change_logs:
+		} else if (choice == R.id.action_change_logs) {
 			// set title
 			alertDialogBuilder.setTitle(getAppVersionName() + " Change Logs");
 			// set dialog message
@@ -222,7 +218,6 @@ public class MainActivity extends Activity implements Observer {
 									dialog.cancel();
 								}
 							});
-			break;
 		}
 
 		// create alert dialog
